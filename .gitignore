@@ -1,0 +1,8 @@
+# Third Party Libraries
+node_modules
+src/lib
+
+# Exclude Build Artifacts
+dist
+src/**/*.js
+src/**/*.js.map
