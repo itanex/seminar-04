@@ -5,6 +5,7 @@ var buffer = require('vinyl-buffer');
 var concat = require('gulp-concat');
 var sourcemaps = require('gulp-sourcemaps');
 var tsify = require('tsify');
+var filelog = require('gulp-filelog');
 
 
 var config = {
@@ -40,9 +41,14 @@ var config = {
     }
 };
 
-gulp.task('default', ['build:app', 'build:vendorjs', 'build:vendorcss']);
+gulp.task('default', [
+    'build:app',
+    'build:static',
+    'build:vendorjs',
+    'build:vendorcss'
+]);
 
-gulp.task('build:app', function () {
+gulp.task('build:app', () => {
     return browserify({
         basedir: '.',
         debug: true,
@@ -54,25 +60,27 @@ gulp.task('build:app', function () {
         .bundle()
         .pipe(source(config.app.dest))
         .pipe(buffer())
-        .pipe(sourcemaps.init({loadMaps: true}))
+        .pipe(sourcemaps.init({ loadMaps: true }))
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest(config.app.distRoot));
 });
 
 gulp.task('build:static', () => {
     return gulp.src(config.static.sources, { base: config.static.baseRoot })
-        //.pipe(filelog())
+        .pipe(filelog())
         .pipe(gulp.dest(config.static.distRoot));
 });
 
 gulp.task('build:vendorjs', () => {
     return gulp.src(config.vendors.js.sources)
+        .pipe(filelog())
         .pipe(concat(config.vendors.js.dest))
         .pipe(gulp.dest(config.vendors.distRoot));
 });
 
 gulp.task('build:vendorcss', () => {
     return gulp.src(config.vendors.css.sources)
+        .pipe(filelog())
         .pipe(concat(config.vendors.css.dest))
         .pipe(gulp.dest(config.vendors.distRoot));
 });
