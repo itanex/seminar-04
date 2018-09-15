@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Seminar-01">
+    <meta name="author" content="Bryan Wood">
+
+    <title>Seminar 01</title>
+    <link rel="stylesheet" href="lib/vendors.css">
+    <link rel="stylesheet" href="site.css">
+</head>
+
+<body ng-controller="ApplicationController as vm">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">Seminar 01</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Site Item 01</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Site Item 02</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Site Item 03</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <main role="main" class="container">
+
+        <div class="starter-template">
+
+            <h1>{{vm.message}}</h1>
+
+            <h2>Welcome {{vm.name}}</h2>
+            <label>
+                Enter your name: <input type="text" ng-model="vm.name">
+            </label>
+        </div>
+
+    </main><!-- /.container -->
+    <script src="app.bundle.js"></script>
+</body>
+
+</html>

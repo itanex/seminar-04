@@ -1,0 +1,34 @@
+{
+  "name": "seminar-01",
+  "version": "1.0.0",
+  "description": "Seminar Example 01",
+  "main": "",
+  "scripts": {
+    "lite": "lite-server",
+    "start": "npm run lite"
+  },
+  "author": "Bryan Wood",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/itanex/seminar-01.git"
+  },
+  "devDependencies": {
+    "@types/angular": "^1.6.50",
+    "browserify": "^16.2.2",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "lite-server": "^2.3.0",
+    "tsify": "^4.0.0",
+    "typescript": "^3.0.3",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
+  },
+  "dependencies": {
+    "angular": "^1.7.4",
+    "bootstrap": "^4.1.3",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.4"
+  }
+}
